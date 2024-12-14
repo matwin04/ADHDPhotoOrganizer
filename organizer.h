@@ -14,10 +14,15 @@ private:
 
     //Date Extractor
     std::string getPhotoDate(const std::string &filePath, bool &success);
-    void moveFile(const std::string &filePath, const std::string &date, bool success);
+    std::string getCameraModel(const std::string &filePath, bool &success);
+
+    void moveFile(const std::string &filePath, const std::string &cameraModel,const std::string &date, bool success);
     void createDir(const std::string &path);
 public:
+    //Constructor
     organizer(const std::string &source, const std::string &target);
+    ~organizer();
+
     void organizePhotos();
     int getFilesOrganized() const;
 
